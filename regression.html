@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>The_Model</title>
+<title>Regression</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -11805,26 +11805,27 @@ $( document ).ready(code_toggle);
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># ONLY USE THIS BLOCK OF CODE ON NICASIA&#39;S COMPUTER </span>
+<span class="c1">#import sys</span>
+<span class="c1">#sys.path.append(&quot;/anaconda/lib/python2.7/site-packages&quot;)</span>
+<span class="c1">#####</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="c1">#from mpl_toolkits.basemap import Basemap</span>
 <span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="kn">import</span> <span class="n">Polygon</span>
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">Imputer</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">cross_validation</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">covariance</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span> <span class="k">as</span> <span class="n">Standardize</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span> <span class="k">as</span> <span class="n">Lin_Reg</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">Ridge</span> <span class="k">as</span> <span class="n">Ridge_Reg</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">Lasso</span> <span class="k">as</span> <span class="n">Lasso_Reg</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">PolynomialFeatures</span>
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">ensemble</span>
 <span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
-<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsRegressor</span> <span class="k">as</span> <span class="n">KNN</span>
-<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span> 
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">statsmodels.regression.linear_model</span> <span class="kn">import</span> <span class="n">OLS</span>
 <span class="kn">import</span> <span class="nn">string</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="kn">as</span> <span class="nn">mpatches</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">math</span>
-<span class="kn">import</span> <span class="nn">string</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">datetime</span>
 </pre></div>
 
 </div>
@@ -11834,7 +11835,7 @@ $( document ).ready(code_toggle);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">## Loading Data </span>
@@ -11849,7 +11850,7 @@ $( document ).ready(code_toggle);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">## Separating our predictor and response variables </span>
@@ -11869,7 +11870,7 @@ $( document ).ready(code_toggle);
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Random-Forest-Model">Random Forest Model<a class="anchor-link" href="#Random-Forest-Model">&#182;</a></h2>
+<h2 id="Linear-Regression">Linear Regression<a class="anchor-link" href="#Linear-Regression">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -11878,29 +11879,137 @@ $( document ).ready(code_toggle);
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It is likely that at least one of our features will not be linearly related to the house price estimate. A linear regression model would not be able to effectively represent those relationships. Tree based models, however, can approximate non-linear relationships. Our implementation using random forests seeks to detect the most significant features</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Parameter-Optimization">Parameter Optimization<a class="anchor-link" href="#Parameter-Optimization">&#182;</a></h2><p>We tried: PCA, number of trees, depths</p>
+<p>For our baseline model, we implemented a simple linear regression model. Unsurprisingly, our results were not too great. We did not deal with issues such as overfitting, a very likely concern since we have over 100 features.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-<span class="n">pca</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">)</span>
-<span class="n">x_train_reduced</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">x_train</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Fit plain regression on train set, evaluate on train and test sets</span>
+<span class="n">reg</span> <span class="o">=</span> <span class="n">Lin_Reg</span><span class="p">()</span>
+<span class="n">reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y_train</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+
+<span class="n">train_r_squared_plain</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">test_r_squared_plain</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="s1">&#39;Plain Regression: R^2 score on training set&#39;</span><span class="p">,</span> <span class="n">train_r_squared_plain</span>
+<span class="k">print</span> <span class="s1">&#39;Plain Regression: R^2 score on test set&#39;</span><span class="p">,</span> <span class="n">test_r_squared_plain</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Plain Regression: R^2 score on training set 0.198558553055
+Plain Regression: R^2 score on test set 0.207981303857
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To deal with overfitting, we implemented Ridge and Lasso Regression with different parameters. Additionally, we will reduce the set of predictors we will incorporate in our model. Starting with 143 predictors, we ended up with 46 final features by dropping predictors with a correlation of less than 0.1 with the response variable. We believe that eliminating weakly related predictors would reduce the noise in our model and improve our performance.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">## Loading Data </span>
+<span class="n">test_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/test_best_features.csv&quot;</span><span class="p">)</span>
+<span class="n">train_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/train_best_features.csv&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Ridge-Regression">Ridge Regression<a class="anchor-link" href="#Ridge-Regression">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We will implement Ridge Regression with cross validation and optimize our score with different regularization parameters.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#--------  k_fold_r_squared</span>
+<span class="c1"># A function for k-fold cross validation with Ridge regression</span>
+<span class="c1"># Input: </span>
+<span class="c1">#      x_train (n x d array of predictors in training data)</span>
+<span class="c1">#      y_train (n x 1 array of response variable vals in training data)</span>
+<span class="c1">#      num_folds (no. of folds for CV)</span>
+<span class="c1">#      param_val (regularization parameter value)</span>
+<span class="c1"># Return: </span>
+<span class="c1">#      average R^2 value across folds</span>
+
+<span class="k">def</span> <span class="nf">k_fold_r_squared</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">num_folds</span><span class="p">,</span> <span class="n">param_val</span><span class="p">):</span>
+    <span class="n">n_train</span> <span class="o">=</span> <span class="n">x_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">n_train</span> <span class="o">*</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">num_folds</span><span class="p">))</span> <span class="c1"># points per fold</span>
+
+    <span class="c1"># Iterate over folds</span>
+    <span class="n">cv_r_squared</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">for</span> <span class="n">fold</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">num_folds</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="c1"># Take k-1 folds for training </span>
+        <span class="n">x_first_half</span> <span class="o">=</span> <span class="n">x_train</span><span class="p">[:</span><span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">fold</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="p">:]</span>
+        <span class="n">x_second_half</span> <span class="o">=</span> <span class="n">x_train</span><span class="p">[</span><span class="n">n</span> <span class="o">*</span> <span class="n">fold</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:,</span> <span class="p">:]</span>
+        <span class="n">x_train_cv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">x_first_half</span><span class="p">,</span> <span class="n">x_second_half</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        
+        <span class="n">y_first_half</span> <span class="o">=</span> <span class="n">y_train</span><span class="p">[:</span><span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">fold</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)]</span>
+        <span class="n">y_second_half</span> <span class="o">=</span> <span class="n">y_train</span><span class="p">[</span><span class="n">n</span> <span class="o">*</span> <span class="n">fold</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
+        <span class="n">y_train_cv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">y_first_half</span><span class="p">,</span> <span class="n">y_second_half</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        
+        <span class="c1"># Take the middle fold for testing</span>
+        <span class="n">x_test_cv</span> <span class="o">=</span> <span class="n">x_train</span><span class="p">[</span><span class="mi">1</span> <span class="o">+</span> <span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">fold</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span><span class="n">n</span> <span class="o">*</span> <span class="n">fold</span><span class="p">,</span> <span class="p">:]</span>
+        <span class="n">y_test_cv</span> <span class="o">=</span> <span class="n">y_train</span><span class="p">[</span><span class="mi">1</span> <span class="o">+</span> <span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">fold</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span><span class="n">n</span> <span class="o">*</span> <span class="n">fold</span><span class="p">]</span>
+
+        <span class="c1"># Fit ridge regression model with parameter value on CV train set, and evaluate CV test performance</span>
+        <span class="n">reg</span> <span class="o">=</span> <span class="n">Ridge_Reg</span><span class="p">(</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">param_val</span><span class="p">)</span>
+        <span class="n">reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train_cv</span><span class="p">,</span> <span class="n">y_train_cv</span><span class="p">)</span>
+        <span class="n">r_squared</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_test_cv</span><span class="p">,</span> <span class="n">y_test_cv</span><span class="p">)</span>
+    
+        <span class="c1"># Cummulative R^2 value across folds</span>
+        <span class="n">cv_r_squared</span> <span class="o">+=</span> <span class="n">r_squared</span>
+
+    <span class="c1"># Return average R^2 value across folds</span>
+    <span class="k">return</span> <span class="n">cv_r_squared</span> <span class="o">*</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">num_folds</span>
 </pre></div>
 
 </div>
@@ -11910,224 +12019,158 @@ $( document ).ready(code_toggle);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Parameters for tuning</span>
-<span class="n">n_trees</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>  <span class="c1"># Trees and depth are explored on an exponentially growing space,</span>
-<span class="n">depths</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>   <span class="c1"># since it is assumed that trees and depth will add accuracy in a decaying fashion.</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Store test &amp; CV R^2 values for different regression parameter values</span>
+<span class="c1"># Range: 10^-7, ... 10^7</span>
+<span class="n">max_pow_of_10</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">min_pow_of_10</span> <span class="o">=</span> <span class="o">-</span><span class="mi">7</span>
+<span class="n">num_params</span> <span class="o">=</span> <span class="n">max_pow_of_10</span> <span class="o">-</span> <span class="n">min_pow_of_10</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">cv_r_squared</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">test_r_squared</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Iterate over various parameter values</span>
+<span class="k">for</span> <span class="n">power_of_10</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">min_pow_of_10</span><span class="p">,</span> <span class="n">max_pow_of_10</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    
+    <span class="c1">#standardize x_train and y_train</span>
+<span class="c1">#    std = Standardize(with_mean=False)</span>
+<span class="c1">#    x_train_std = std.fit_transform(x_train)</span>
+<span class="c1">#    x_test_std = x_test / std.scale_ </span>
+    
+    <span class="c1"># Fit regression model on train set, and evaluate test R^2</span>
+    <span class="n">reg</span> <span class="o">=</span> <span class="n">Ridge_Reg</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="n">power_of_10</span><span class="p">)</span>
+    <span class="n">reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    <span class="n">test_r_squared</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span>
+    
+    <span class="c1"># Evaluate 5-fold CV R^2</span>
+    <span class="n">cv_r_squared</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k_fold_r_squared</span><span class="p">(</span><span class="n">x_train</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="n">power_of_10</span><span class="p">))</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Plot CV and test R^2 values as a function of parameter value</span>
+<span class="c1">#fig, ax = plt.subplots(1, 1, figsize=(6, 6))</span>
+
+<span class="c1">#ax.semilogx(10.0**np.arange(min_pow_of_10, max_pow_of_10 + 1), </span>
+           <span class="c1"># cv_r_squared, </span>
+           <span class="c1"># c=&#39;b&#39;, </span>
+           <span class="c1"># label=&#39;5-fold CV&#39;)</span>
+<span class="c1">#ax.semilogx(10.0**np.arange(min_pow_of_10, max_pow_of_10 + 1), </span>
+           <span class="c1"># test_r_squared, </span>
+           <span class="c1"># c=&#39;r&#39;, </span>
+           <span class="c1"># label=&#39;Test&#39;)</span>
+
+<span class="c1">#ax.set_xlabel(&#39;Regularization parameter&#39;)</span>
+<span class="c1">#ax.set_ylabel(&#39;R^2 score&#39;)</span>
+<span class="c1">#ax.set_title(&#39;Comparison of R^2 Score&#39;)</span>
+<span class="c1">#ax.legend(loc=&#39;lower right&#39;)</span>
+<span class="c1"># Best CV parameter value</span>
+<span class="n">best_cv_param</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">cv_r_squared</span><span class="p">)</span>
+
+<span class="c1"># Print R^2 for best CV parameter, max R^2 across all parameters, and R^2 for plain regression</span>
+<span class="k">print</span> <span class="s1">&#39;Ridge regression: Test R^2 score for CV choice&#39;</span><span class="p">,</span> <span class="n">test_r_squared</span><span class="p">[</span><span class="n">best_cv_param</span><span class="p">]</span>
+<span class="k">print</span> <span class="s1">&#39;Ridge regression: Max Test R^2 score&#39;</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">test_r_squared</span><span class="p">)</span>
+<span class="k">print</span> <span class="s1">&#39;Plain regression: Test R^2 score:&#39;</span><span class="p">,</span> <span class="n">test_r_squared_plain</span>
+
+<span class="c1">#plt.show()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Ridge regression: Test R^2 score for CV choice 0.231877645585
+Ridge regression: Max Test R^2 score 0.262278519717
+Plain regression: Test R^2 score: 0.207981303857
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Lasso-Regression">Lasso Regression<a class="anchor-link" href="#Lasso-Regression">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We will implement Lasso Regression with cross validation and optimize our score with different regularization parameters.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># To keep track of the best model</span>
-<span class="n">best_score</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="c1"># Run grid search for model with 5-fold cross validation</span>
-<span class="c1">#print &#39;5-fold cross validation:&#39;</span>
-<span class="k">for</span> <span class="n">trees</span> <span class="ow">in</span> <span class="n">n_trees</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">depth</span> <span class="ow">in</span> <span class="n">depths</span><span class="p">:</span>
-        <span class="c1"># Cross validation for every experiment</span>
-        <span class="n">k_folds</span> <span class="o">=</span> <span class="n">cross_validation</span><span class="o">.</span><span class="n">KFold</span><span class="p">(</span><span class="n">x_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">n_folds</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-        <span class="n">scores</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">train_indices</span><span class="p">,</span> <span class="n">validation_indices</span> <span class="ow">in</span> <span class="n">k_folds</span><span class="p">:</span>
-            <span class="c1"># Generate training data</span>
-            <span class="n">x_train_cv</span> <span class="o">=</span> <span class="n">x_train</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">train_indices</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-            <span class="n">y_train_cv</span> <span class="o">=</span> <span class="n">y_train</span><span class="p">[</span><span class="n">train_indices</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-            <span class="c1"># Generate validation data</span>
-            <span class="n">x_validate</span> <span class="o">=</span> <span class="n">x_train</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">validation_indices</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-            <span class="n">y_validate</span> <span class="o">=</span> <span class="n">y_train</span><span class="p">[</span><span class="n">validation_indices</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#--------  k_fold_r_squared</span>
+<span class="c1"># A function for k-fold cross validation with Ridge regression</span>
+<span class="c1"># Input: </span>
+<span class="c1">#      x_train (n x d array of predictors in training data)</span>
+<span class="c1">#      y_train (n x 1 array of response variable vals in training data)</span>
+<span class="c1">#      num_folds (no. of folds for CV)</span>
+<span class="c1">#      param_val (regularization parameter value)</span>
+<span class="c1"># Return: </span>
+<span class="c1">#      average R^2 value across folds</span>
 
-            <span class="c1"># Fit random forest on training data</span>
-            <span class="n">model</span> <span class="o">=</span> <span class="n">ensemble</span><span class="o">.</span><span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="n">trees</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="n">depth</span><span class="p">)</span>
-            <span class="c1">#model.fit(x_train_reduced, y_train_cv)</span>
-            <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train_cv</span><span class="p">,</span> <span class="n">y_train_cv</span><span class="p">)</span>
-            <span class="c1"># Score on validation data</span>
-            <span class="c1">#scores += [model.score(x_validate_reduced, y_validate)]</span>
-            <span class="n">scores</span> <span class="o">+=</span> <span class="p">[</span><span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_validate</span><span class="p">,</span> <span class="n">y_validate</span><span class="p">)]</span>
+<span class="k">def</span> <span class="nf">k_fold_r_squared</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">num_folds</span><span class="p">,</span> <span class="n">param_val</span><span class="p">):</span>
+    <span class="n">n_train</span> <span class="o">=</span> <span class="n">x_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">n_train</span> <span class="o">*</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">num_folds</span><span class="p">))</span> <span class="c1"># points per fold</span>
 
-            <span class="c1"># Record and report accuracy</span>
-            <span class="n">average_score</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
-            <span class="c1">#print &quot;Trees:&quot;, trees, &quot;Depth:&quot;, depth, &quot;Score:&quot;, average_score</span>
+    <span class="c1"># Iterate over folds</span>
+    <span class="n">cv_r_squared</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">for</span> <span class="n">fold</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">num_folds</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="c1"># Take k-1 folds for training </span>
+        <span class="n">x_first_half</span> <span class="o">=</span> <span class="n">x_train</span><span class="p">[:</span><span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">fold</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="p">:]</span>
+        <span class="n">x_second_half</span> <span class="o">=</span> <span class="n">x_train</span><span class="p">[</span><span class="n">n</span> <span class="o">*</span> <span class="n">fold</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:,</span> <span class="p">:]</span>
+        <span class="n">x_train_cv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">x_first_half</span><span class="p">,</span> <span class="n">x_second_half</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        
+        <span class="n">y_first_half</span> <span class="o">=</span> <span class="n">y_train</span><span class="p">[:</span><span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">fold</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)]</span>
+        <span class="n">y_second_half</span> <span class="o">=</span> <span class="n">y_train</span><span class="p">[</span><span class="n">n</span> <span class="o">*</span> <span class="n">fold</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
+        <span class="n">y_train_cv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">y_first_half</span><span class="p">,</span> <span class="n">y_second_half</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        
+        <span class="c1"># Take the middle fold for testing</span>
+        <span class="n">x_test_cv</span> <span class="o">=</span> <span class="n">x_train</span><span class="p">[</span><span class="mi">1</span> <span class="o">+</span> <span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">fold</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span><span class="n">n</span> <span class="o">*</span> <span class="n">fold</span><span class="p">,</span> <span class="p">:]</span>
+        <span class="n">y_test_cv</span> <span class="o">=</span> <span class="n">y_train</span><span class="p">[</span><span class="mi">1</span> <span class="o">+</span> <span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">fold</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span><span class="n">n</span> <span class="o">*</span> <span class="n">fold</span><span class="p">]</span>
 
-            <span class="c1"># Update our record of the best parameters see so far</span>
-            <span class="k">if</span> <span class="n">average_score</span> <span class="o">&gt;</span> <span class="n">best_score</span><span class="p">:</span>
-                <span class="n">best_score</span> <span class="o">=</span> <span class="n">average_score</span>
-                <span class="n">best_trees</span> <span class="o">=</span> <span class="n">trees</span>
-                <span class="n">best_depth</span> <span class="o">=</span> <span class="n">depth</span>
-</pre></div>
+        <span class="c1"># Fit ridge regression model with parameter value on CV train set, and evaluate CV test performance</span>
+        <span class="n">reg</span> <span class="o">=</span> <span class="n">Lasso_Reg</span><span class="p">(</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">param_val</span><span class="p">)</span>
+        <span class="n">reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train_cv</span><span class="p">,</span> <span class="n">y_train_cv</span><span class="p">)</span>
+        <span class="n">r_squared</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_test_cv</span><span class="p">,</span> <span class="n">y_test_cv</span><span class="p">)</span>
+    
+        <span class="c1"># Cummulative R^2 value across folds</span>
+        <span class="n">cv_r_squared</span> <span class="o">+=</span> <span class="n">r_squared</span>
 
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Best-Model">Best Model<a class="anchor-link" href="#Best-Model">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Fit model on entire train set using chosen number of trees and depth</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">ensemble</span><span class="o">.</span><span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="n">best_trees</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="n">best_depth</span><span class="p">)</span>
-<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-<span class="k">print</span> <span class="s1">&#39;Chosen number of trees, depth:&#39;</span><span class="p">,</span> <span class="n">best_trees</span><span class="p">,</span> <span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">best_depth</span>
-<span class="k">print</span> <span class="s1">&#39;Test accuracy:&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Chosen number of trees, depth: 50 , 30
-Chosen number of trees, depth: 70 , 30
-Test accuracy: 0.554358358253
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Most-Significant-Features">Most Significant Features<a class="anchor-link" href="#Most-Significant-Features">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="s2">&quot;Top 10 Features sorted by their Score:&quot;</span>
-<span class="c1">#print sorted(zip(map(lambda x: round(x, 4), model.feature_importances_), x_train.columns), </span>
-<span class="c1">#             reverse=True)</span>
-<span class="nb">sorted</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">model</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]),</span> <span class="n">x_train</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span> <span class="n">reverse</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Top 10 Features sorted by their Score:
-</pre>
-</div>
-</div>
-
-<div class="output_area"><div class="prompt output_prompt">Out[29]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[(0.3375, &#39;home_size&#39;),
- (0.0745, &#39;latitude&#39;),
- (0.0704, &#39;property_size&#39;),
- (0.0603, &#39;longitude&#39;),
- (0.0514, &#39;bathrooms&#39;),
- (0.0326, &#39;bedrooms&#39;),
- (0.0309, &#39;year_built&#39;),
- (0.003, &#39;tax_year&#39;),
- (0.0008, &#39;schools_Mean ELA Score&#39;),
- (0.0007, &#39;schools_Number Tested&#39;)]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">## To fit model on entire data set </span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">])</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span><span class="p">])</span> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#model = ensemble.RandomForestRegressor(n_estimators=best_trees, max_depth=35)</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">ensemble</span><span class="o">.</span><span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
-<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="c1">#predictions = model.predict(df_to_predict)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[31]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>RandomForestRegressor(bootstrap=True, criterion=&#39;mse&#39;, max_depth=30,
-           max_features=&#39;auto&#39;, max_leaf_nodes=None, min_samples_leaf=1,
-           min_samples_split=2, min_weight_fraction_leaf=0.0,
-           n_estimators=70, n_jobs=1, oob_score=False, random_state=None,
-           verbose=0, warm_start=False)</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">## Saving model to pickle file </span>
-<span class="c1">#import pickle</span>
-<span class="c1">#s = pickle.dumps(model)</span>
-<span class="c1">#pickle.dump(model, open(&quot;model.p&quot;, &quot;wb&quot;))</span>
+    <span class="c1"># Return average R^2 value across folds</span>
+    <span class="k">return</span> <span class="n">cv_r_squared</span> <span class="o">*</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">num_folds</span>
 </pre></div>
 
 </div>
@@ -12140,7 +12183,8 @@ Test accuracy: 0.554358358253
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#model2 = pickle.load(open(&quot;model.p&quot;,&quot;rb&quot;))</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12150,16 +12194,103 @@ Test accuracy: 0.554358358253
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span> 
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Store test &amp; CV R^2 values for different regression parameter values</span>
+<span class="c1"># Range: 10^-7, ... 10^7</span>
+<span class="n">max_pow_of_10</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">min_pow_of_10</span> <span class="o">=</span> <span class="o">-</span><span class="mi">7</span>
+<span class="n">num_params</span> <span class="o">=</span> <span class="n">max_pow_of_10</span> <span class="o">-</span> <span class="n">min_pow_of_10</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">cv_r_squared</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">test_r_squared</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Iterate over various parameter values</span>
+<span class="k">for</span> <span class="n">power_of_10</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">min_pow_of_10</span><span class="p">,</span> <span class="n">max_pow_of_10</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    
+    <span class="c1">#standardize x_train and y_train</span>
+    <span class="c1">#std = Standardize(with_mean=False)</span>
+    <span class="c1">#x_train_std = std.fit_transform(x_train)</span>
+    <span class="c1">#x_test_std = x_test / std.scale_ </span>
+    
+    <span class="c1"># Fit regression model on train set, and evaluate test R^2</span>
+    <span class="n">reg</span> <span class="o">=</span> <span class="n">Lasso_Reg</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="n">power_of_10</span><span class="p">)</span>
+    <span class="n">reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    <span class="n">test_r_squared</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span>
+    
+    <span class="c1"># Evaluate 5-fold CV R^2</span>
+    <span class="n">cv_r_squared</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k_fold_r_squared</span><span class="p">(</span><span class="n">x_train</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="n">power_of_10</span><span class="p">))</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Plot CV and test R^2 values as a function of parameter value</span>
+<span class="c1">#fig, ax = plt.subplots(1, 1, figsize=(6, 6))</span>
+
+<span class="c1">#ax.semilogx(10.0**np.arange(min_pow_of_10, max_pow_of_10 + 1), </span>
+<span class="c1">#            cv_r_squared, </span>
+<span class="c1">#            c=&#39;b&#39;, </span>
+<span class="c1">#            label=&#39;5-fold CV&#39;)</span>
+<span class="c1">#ax.semilogx(10.0**np.arange(min_pow_of_10, max_pow_of_10 + 1), </span>
+<span class="c1">#            test_r_squared, </span>
+<span class="c1">#            c=&#39;r&#39;, </span>
+<span class="c1">#            label=&#39;Test&#39;)</span>
+
+<span class="c1">#ax.set_xlabel(&#39;Regularization parameter&#39;)</span>
+<span class="c1">#ax.set_ylabel(&#39;R^2 score&#39;)</span>
+<span class="c1">#ax.set_title(&#39;Comparison of R^2 Score&#39;)</span>
+<span class="c1">#ax.legend(loc=&#39;lower right&#39;)</span>
+
+<span class="c1"># Best CV parameter value</span>
+<span class="n">best_cv_param</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">cv_r_squared</span><span class="p">)</span>
+
+<span class="c1"># Print R^2 for best CV parameter, max R^2 across all parameters, and R^2 for plain regression</span>
+<span class="k">print</span> <span class="s1">&#39;Lasso regression: Test R^2 score for CV choice&#39;</span><span class="p">,</span> <span class="n">test_r_squared</span><span class="p">[</span><span class="n">best_cv_param</span><span class="p">]</span>
+<span class="k">print</span> <span class="s1">&#39;Lasso regression: Max Test R^2 score&#39;</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">test_r_squared</span><span class="p">)</span>
+<span class="k">print</span> <span class="s1">&#39;Plain regression: Test R^2 score:&#39;</span><span class="p">,</span> <span class="n">test_r_squared_plain</span>
+
+<span class="c1">#plt.show()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Lasso regression: Test R^2 score for CV choice 0.231877645585
+Lasso regression: Max Test R^2 score 0.262278519717
+Plain regression: Test R^2 score: 0.207981303857
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>While our Lasso and Ridge regression models make marginal gains on our regression scores, the performance is still fairly low. This may be due to a lack of linear relationship between predictor and response variables. If that is the case, then other non-linear models may be more suitable for our data.</p>
+
+</div>
+</div>
 </div>
     </div>
   </div>
