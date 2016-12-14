@@ -34,32 +34,70 @@
         <div id="container"> 
             <div> 
                 <h1> Motivation </h1>
+                <p>
                 Real estate in Manhattan is notorious for being pricey, with homes highly coveted by professional investors and recent college graduates alike. In fact, real estate prices have enjoyed steady appreciation since 2009. Recently, however, price growth has cooled due to a market price correction, making now a good time to re-evaluate one’s options in the housing market. This market is especially ideal for those who are looking to sell and upsize.
-                Our project seeks to aid individuals in their real estate decisions by predicting the prices of properties of interest. We compiled information regarding each property, such as the number of bedrooms and bathrooms, and neighborhood location. We also expected certain additional attributes such as proximity to public transportation, school district performance, and regional crime rates to be relevant. 
+                </p> 
+
+                <p>
+                Our project seeks to aid individuals in their real estate decisions by predicting the prices of properties of interest. We compiled information regarding each property, such as the number of bedrooms and bathrooms, and neighborhood location. We also expected certain additional attributes such as proximity to public transportation, school district performance, and regional crime rates to be relevant.
+                </p>
+
             </div> 
             <div> 
                 <h1> Data </h1> 
-                We filtered through data from NYC City Planning Data, to get a list of residential homes and using Zillow’s API, we pulled information regarding these properties. We then collected relevant data regarding crime rates from the NYPD, academic performance from the NYC Department of Education, and public transportation locations from the MTA. 
+                <p>
+                We filtered through data from NYC City Planning Data to get a list of residential homes. We then pulled information regarding these properties using Zillow's API, acquiring many predictors including property size, number of bedrooms and bathrooms, latitude and longitude, and year built. We then collected relevant data regarding crime rates from the NYPD, academic performance from the NYC Department of Education, and public transportation locations from the MTA. (see <a href="data_collection.html" target="_self">Data Collection</a>)
+                </p>
 
-                From this data set, we attempted models with all features as well as with reduced features. We also avoided issues of multicollinearity by dealing with highly correlted predictors. In the cleaning process, we dropped and imputed values for missing fields. 
+                <p>
+                To merge all of this data together, we used shapefiles of the neighborhood, school district, and precinct divisions in Manhattan and mapped each home to a neighborhood, school district, and precinct using its latitude and longitude.  We then were able to add columns containing information on test scores and crime rates for the district/precinct in which each home was located.  As people tend to be willing to pay much more in order to live in a safer neighborhood or a neighborhood with better schools for their children, we expected these predictors to be at least somewhat significantly correlated with price. We also expected neighborhood to be a fairly good predictor, as prices tend to vary drastically across neighborhoods in Manhattan.  (see <a href="data_collection.html" target="_self">Data Collection</a>)
+                </p>
+
+                <p>
+                In terms of data cleaning, we got rid of irrelevant variables (links, IDs, etc.), and created dummies for each of our categorical variables.  We eliminated all rows with NAs for our y-variable (the estimated value of the home), and imputed remaining values with the median using sklearn's Imputer function. (see <a href="data_cleaning.html" target="_self">Data Cleaning</a>)
+                </p>
+
+                <p>
+                Our dataset had over 100 predictors, and so for our regression models we looked at the correlations between each predictor and our y-variable and eliminated all predictors with a correlation of less than 0.1.  We also found that many of the crime and school predictors were very highly correlated with each other, so we created a much smaller subset of these predictors to be used in our regression models.  For random forest, we kept all of our predictors. (see <a href="data_cleaning.html" target="_self">Data Cleaning</a>)
+                </p>
+
             </div> 
             <div> 
                 <h1> Model and Results </h1>
-                Our random forests model proved to be most accurate. The most important features included home size, property size, location, number bathrooms and bedrooms, and school test scores. Interestingly, we found distance to subway stops, home turnover rate in the past year, and certain neighborhoods and home types to be insignificant. We believe that this may be because there is truly a negligible relationship. For example public transportation is so abundant in Manhattan that the differences in distances to subway stops are insignificant. People may also prefer driving in which case proximity to public transportation would  not be relevant to housing price. Some neighborhoods are exceptionally desirable (e.g., Tribeca), and some are less desirable (e.g., Washington Heights). For this reason, it makes sense that these neighborhoods in particular are used by the model while others are not. 
+                <p>
+                We tried a variety of models, including linear, lasso, and ridge <a href="regression.html" target="_self">regression</a>, <a href="knn.html" target="_self">KNN</a>, and <a href="rf.html" target="_self">random forests</a>.  For each model, we used cross validation to choose parameters and then tested the accuracy of our model on the left-out test set. We used R-squared as our measure of accruacy.
+                </p>
+
+                <p>
+                Our <a href="rf.html" target="_self">random forest</a> model proved to be most accurate. Through cross-validating, we found that 90 trees with a max depth of 40 worked best. The most important features included home size, property size, location, number bathrooms and bedrooms, and school test scores. Interestingly, we found distance to subway stops, home turnover rate in the past year, and certain neighborhoods and home types to be insignificant. We believe that this may be because there is truly a negligible relationship. For example, public transportation is so abundant in Manhattan that the differences in distances to subway stops are insignificant. People may also prefer driving in which case proximity to public transportation would  not be relevant to housing price. Some neighborhoods are exceptionally desirable (e.g., Tribeca), and some are less desirable (e.g., Washington Heights). For this reason, it makes sense that these neighborhoods in particular are used by the model while others are not.
+                </p>
+
+                <p>
+                Below are scatterplots showing the relationship between neighborhoods, home types, and the prices predicted by our model.  To make these predictions, we created a dataframe with one row for each neighborhood/home type combination, and for the rest of the predictors used the median values for that neighborhood and home type (see <a href="predictions_on_subsets.html" target="_self">Predictions on Subsets</a>).  Therefore, these predictions are what we would expect the value of the average home of each specific type within each specific neighborhood to be.  As expected, some neighborhoods, such as Tribeca and the Upper East Side, tend to be more expensive than others.  Certain types of homes, such as duplexes and townhouses, tend to be slightly more expensive than others, but it appears to vary greatly by neighborhood.
+                </p>
             </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="img/housing_prices1.png" style="width:800px;">
+                </div>
+                <div class="col-md-6">
+                    <img src="img/housing_prices2.png" style="width:800px;">
+                </div>
+            </div>
+
             <div> 
                 <h1> Discussion  </h1>
-                The majority of the correlations between our predictors and the response variable are <.2, indicating weak relationships. Therefore, we believe our R2 of .51 is more likely a function of the quality of our data than insufficient model optimization. There was also a lot of missing data, causing us to drop data points that had missing values for number of bedrooms and bathrooms and impute values for tax value and home size, which decreased the size of our data set and accuracy of our model.We believe that better data collection methods would provide more comprehensive training sets, which could improve our model. We have created a tool for users to compare the prices of different homes based on desired traits. 
+                <p>
+                Our best model (random forest with 90 trees and a max depth of 40) ended up having an R-squared value of 0.533 on our left-out test set.  We believe, though, that this is more likely a function of the quality of our data than insufficient model optimization. The majority of the correlations between our predictors and the response variable were less than .2, indicating weak relationships. There was also a lot of missing data, causing us to drop many rows as well as impute many values, which decreased both the size of our data set and the accuracy of our model.  We believe that better data collection methods would provide more comprehensive training sets, which could improve our model. 
+                </p>
+                
+                <p>
+                Below, we have created an interactive tool for users to compare housing prices across neighborhoods for different home types.  Users can either look at a specific home type across all neighborhoods or can select two specific neighborhoods and can compare the predicted prices for all home types between these two neighborhoods.  These predictions were created in the same way as those in the above scatterplots; we created one row for each home type/neighborhood combination, and used median values within that neighborhood and home type for the remaining predictors.  We can see from the map that certain neighborhoods, as expected, such as Tribeca and the Upper East Side, have much more expensive predicted prices for many of the home types.  It is also clear that changing the home type significantly changes the predicted price.
+                </p>
             </div> 
         </div>
-        <div class="row">
-            <div class="col-md-6">
-                <img src="img/housing_prices1.png" style="width:800px;">
-            </div>
-            <div class="col-md-6">
-                <img src="img/housing_prices2.png" style="width:800px;">
-            </div>
-        </div>
+
         <div class="row">
             <div class="col-md-1"> </div>
             <div class="col-md-2" id="chloropleth-helpers">
