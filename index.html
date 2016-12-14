@@ -19,7 +19,6 @@
       <li><a href="#motivation">Motivation</a></li>
       <li><a href="#about-data">Data</a></li>
       <li><a href="#model-results">Model &amp; Results</a></li>
-      <li><a href="#about-data">Data</a></li>
       <li><a href="#discussion">Discussion</a></li>
     </ul>
 
@@ -27,7 +26,7 @@
             <h1>Predicting the Market Value <br/> of Homes in Manhattan</h1>
             <h4>Marina Adario, Nicasia Beebe-Wang, Mei Yin Wu</h4>
         </div>
-        
+
     <div class="container-fluid">
 
 
@@ -57,11 +56,11 @@
             <div class="section" id="about-data"> 
                 <h1> Data </h1> 
                 <p>
-                We filtered through data from NYC City Planning Data to get a list of residential homes. We then pulled information regarding these properties using Zillow's API, acquiring many predictors including property size, number of bedrooms and bathrooms, latitude and longitude, and year built. We then collected relevant data regarding crime rates from the NYPD, academic performance from the NYC Department of Education, and public transportation locations from the MTA. (see <a href="data_collection.html" target="_self">Data Collection</a>)
+                We filtered through a <a href="https://www1.nyc.gov/site/planning/data-maps/open-data/dwn-pluto-mappluto.page">dataset</a> from the NYC Department of City Planning containing extensive land use and geographic information to get a list of residential homes. We then pulled information regarding these properties using Zillow's API, acquiring many predictors including property size, number of bedrooms and bathrooms, latitude and longitude, and year built. We then collected relevant data regarding <a href="http://www.nyc.gov/html/nypd/html/crime_prevention/crime_statistics.shtml"> crime rates </a> from the NYPD, <a href="http://schools.nyc.gov/Accountability/data/default.htm"> academic performance rates </a> from the NYC Department of Education, and <a href="http://web.mta.info/developers/data/nyct/subway/StationEntrances.csv">subway stop locations</a> from the MTA. (see <a href="data_collection.html" target="_self">Data Collection</a>)
                 </p>
 
                 <p>
-                To merge all of this data together, we used shapefiles of the neighborhood, school district, and precinct divisions in Manhattan and mapped each home to a neighborhood, school district, and precinct using its latitude and longitude.  We then were able to add columns containing information on test scores and crime rates for the district/precinct in which each home was located.  As people tend to be willing to pay much more in order to live in a safer neighborhood or a neighborhood with better schools for their children, we expected these predictors to be at least somewhat significantly correlated with price. We also expected neighborhood to be a fairly good predictor, as prices tend to vary drastically across neighborhoods in Manhattan.  (see <a href="data_collection.html" target="_self">Data Collection</a>)
+                To merge all of this data together, we used shapefiles for <a href="http://www.zillow.com/howto/api/neighborhood-boundaries.htm"> neighborhoods</a>, <a href="http://www1.nyc.gov/site/planning/data-maps/open-data/districts-download-metadata.page"> school districts </a>, and <a href="http://www1.nyc.gov/site/planning/data-maps/open-data/districts-download-metadata.page"> police precincts </a> in Manhattan and mapped each home to a neighborhood, school district, and precinct using its latitude and longitude.  We then were able to add features containing information on test scores and crime rates for the district/precinct in which each home was located.  As people tend to be willing to pay much more in order to live in a safer neighborhood or a neighborhood with better schools for their children, we expected these predictors to be at least somewhat significantly correlated with price. We also expected neighborhood to be a fairly good predictor, as prices tend to vary drastically across neighborhoods in Manhattan.  (see <a href="data_collection.html" target="_self">Data Collection</a>)
                 </p>
 
                 <p>
