@@ -30,6 +30,10 @@ h1 {
 
 /* TABLE */
 
+#heading-for-table {
+    text-align: center;
+}
+
 .info-table {
   margin-top: 30px;
   padding: 10px;
