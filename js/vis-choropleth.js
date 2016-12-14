@@ -72,7 +72,7 @@ var key = d3.select("#chloropleth-legend")
 
 var legend = key.append("defs")
     .append("svg:linearGradient")
-    .attr("id", "gradient")
+    .attr("id", "vis-gradient")
     .attr("x1", "100%")
     .attr("y1", "0%")
     .attr("x2", "100%")
@@ -272,7 +272,7 @@ function updateChoropleth() {
         .attr("width", legend_width)
         .attr("height", legend_height)
         .style("stroke", "#000")
-        .style("fill", "url(#gradient)");
+        .style("fill", "url(#vis-gradient)");
 
     // create a scale to map from data values to legend in order to
     var y = d3.scale.linear().range([legend_height, 0])
@@ -285,11 +285,11 @@ function updateChoropleth() {
         .tickSize(5)
 
     //remove outdated axis values
-    d3.select("#legend-axis").remove()
+    d3.select("#vis-legend-axis").remove()
 
     // add axis
     key.append("g")
-        .attr("id", "legend-axis")
+        .attr("id", "vis-legend-axis")
         .attr("class", "y axis")
         .attr("transform", "translate(" + (legend_margin.left + legend_width) + "," + legend_margin.top + ")")
         .transition()
