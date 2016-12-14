@@ -4,20 +4,66 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>NYC Housing Prices</title>
+    <title> Housing Prices in Manhattan</title>
 
-    <!-- Load Google Font -->
-    <link href='https://fonts.googleapis.com/css?family=Roboto:100,400,300,400italic,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/colorbrewer.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
-</head>
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet"></head>
 <body>
-	<div> 
-		NYC Housing Prices 
-	</div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-1"> </div>
+            <div class="col-md-2" id="chloropleth-helpers">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <label>Select data attributes to display:</label>
+                            <select class="form-control" id="data-type2">
+                                <option value="Apartment - 1 bedrooms">1-Bedroom Apartment</option>
+                                <option value="Apartment - 2 bedrooms">2-Bedroom Apartment</option>
+                                <option value="Apartment - 3 bedrooms">3-Bedroom Apartment</option>
+                                <option value="Condominium">Condominium</option>
+                                <option value="Cooperative">Cooperative</option>
+                                <option value="Townhouse">Townhouse</option>
+                                <option value="Duplex">Duplex</option>
+                                <option value="Triplex">Triplex</option>
+                                <option value="Quadruplex">Quadruplex</option>
+                                <option value="SingleFamily">Single-Family</option>
+                                <option value="MultiFamily2To4">Multi-Family (2-4)</option>
+                                <option value="MultiFamily5Plus">Multi-Family (5+)</option>
+                            </select>
+                        </div>
+                    </form>
 
-<IMG SRC="http://www.warrenphotographic.co.uk/photography/bigs/16066-Woodle-puppy-and-kitten-boxing-white-background.jpg" ALT="some text" WIDTH=1000 >
+                <div class="row">
+                    <div id="chloropleth-legend"></div>
+                </div>
+            </div>
+            <div class="col-md-3" id="chloropleth"></div>
+            <div class="col-md-6" id="info title">
+                <div class="row" id="heading-for-tables">
+                    <h2> Compare two neighborhoods  </h2>
+                    click regions to the right.
+                </div>
+                <div class="col-md-4" id="table-titles"></div>
+                <div class="col-md-4" id="info-1"></div>
+                <div class="col-md-4" id="info-2"></div>
+            </div>
 
+        </div>
+
+
+    </div>
+    <!-- Load JS libraries -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/queue.min.js"></script>
+    <script src="js/topojson.js"></script>
+    <script src="js/d3.min.js"></script>
+
+    <!-- Choropleth and second visualization -->
+    <script src="js/vis-choropleth.js"></script>
+    <script src="js/vis-second.js"></script>
+    
 </body>
 </html>

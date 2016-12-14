@@ -1,0 +1,180 @@
+
+/* LAYOUT */
+
+body {
+    font-size: 15px;
+    background-color: #ffffff;
+    font-family: 'Rubik', sans-serif;
+}
+
+.row {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+h1 {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.section-header {
+    padding-left: 40px;
+    background-color: #67000d;
+    color: #fff;
+    opacity: .4;
+}
+
+
+
+/* TABLE */
+
+.info-table {
+  margin-top: 30px;
+  padding: 10px;
+  margin-right: auto;
+  width: 100%;
+  text-align: center;
+}
+
+.info-table-titles {
+  text-align: left;
+}
+
+#info-1, #info-2 {
+    text-align: center
+}
+
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(odd) {
+  background: #ddddff;
+  text-align: left
+}
+
+.table-row {
+  font-weight: bold ;
+}
+
+
+/* 1st block */
+
+#background-info {
+    padding-left: 40px;
+    padding-bottom: 40px;
+}
+
+#africa-pic {
+    width: 100%;
+    margin: auto;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+
+
+
+/* Chloropleth Map Section */
+
+#text-chloropleth{
+    padding-left: 40px
+}
+
+.axis path, .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+#data-type {
+    width: 90% ;
+}
+
+#chloropleth-helpers{
+    padding-top: 30px;
+}
+#tree-title {
+    padding-left: 40px;
+}
+
+#title-text-chloropleth {
+    align-content: center
+}
+
+
+/* map tooltips */
+
+div.tooltip {
+    color: #000;
+    background-color: #fff;
+    padding: .5em;
+    text-shadow: #f5f5f5 0 1px 0;
+    border-radius: 2px;
+    opacity: 0.9;
+    position: absolute;
+}
+
+#tooltip-country {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.table-row-name {
+    font-weight: bold ;
+}
+
+.table-elt {
+    padding-left: 10px ;
+}
+
+
+
+/* 3rd block */
+
+.quote {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 20px;
+    font-style: italic;
+}
+
+
+
+/* Tree Diagram */
+
+#vis2 {
+    padding-left: 20px;
+}
+
+.tree-text {
+    fill: #08306b;
+    opacity: 1;
+    font-family: 'Rubik', sans-serif;
+}
+
+
+.node {
+    cursor: pointer;
+}
+
+.node circle {
+    fill: #fff;
+    stroke: #6A82A6;
+    stroke-width: 5px;
+}
+
+.node text {
+    font-size: 11px;
+}
+
+.link {
+    fill: none;
+    stroke: #3f007d;
+    opacity: .2;
+    stroke-width: 10px;
+}

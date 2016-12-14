@@ -1,0 +1,299 @@
+neighborhood,home_type,predicted_price
+Battery Park,MultiFamily2To4,1457620.15668
+Battery Park,Apartment - 1 bedrooms,1565486.12185
+Battery Park,Condominium,2006686.2381
+Battery Park,SingleFamily,955404.814286
+Carnegie Hill,MultiFamily2To4,3571884.18571
+Carnegie Hill,Apartment - 1 bedrooms,1538474.77143
+Carnegie Hill,Cooperative,7489746.3381
+Carnegie Hill,Condominium,2750870.08435
+Carnegie Hill,SingleFamily,9142016.55714
+Carnegie Hill,Duplex,8184986.25714
+Carnegie Hill,Townhouse,8557593.12857
+Carnegie Hill,Quadruplex,9609107.65714
+Carnegie Hill,Triplex,9566547.94286
+Carnegie Hill,Miscellaneous,11169449.8714
+Central Park,MultiFamily2To4,1990762.31429
+Central Park,Cooperative,4298403.12857
+Central Park,Condominium,7927375.61429
+Chelsea,MultiFamily2To4,3241757.8928
+Chelsea,Apartment - 1 bedrooms,1191225.26218
+Chelsea,Cooperative,8506749.98571
+Chelsea,Unknown,1656808.67475
+Chelsea,Condominium,6465119.92857
+Chelsea,SingleFamily,8587466.62857
+Chelsea,Duplex,7570948.94286
+Chelsea,Townhouse,9932924.2
+Chelsea,Quadruplex,8130461.12857
+Chelsea,MultiFamily5Plus,2731025.08022
+Chelsea,Triplex,7827128.61429
+Chinatown,MultiFamily2To4,1930958.15201
+Chinatown,Apartment - 1 bedrooms,1547957.23281
+Chinatown,Unknown,2045149.22542
+Chinatown,Condominium,2061101.88078
+Chinatown,SingleFamily,8816099.07143
+Chinatown,Townhouse,3834512.66905
+Clinton,MultiFamily2To4,1686155.63865
+Clinton,Apartment - 1 bedrooms,1089088.44198
+Clinton,Cooperative,8175981.18254
+Clinton,Unknown,1877241.81253
+Clinton,Condominium,3020577.35714
+Clinton,SingleFamily,8067813.43048
+Clinton,Duplex,8983478.125
+Clinton,Townhouse,4658191.2
+Clinton,Quadruplex,7529228.51429
+Clinton,MultiFamily5Plus,1279778.50189
+Clinton,Triplex,8677606.77143
+East Harlem,MultiFamily2To4,3505911.24405
+East Harlem,Cooperative,5569696.48571
+East Harlem,Condominium,5702421.32857
+East Harlem,SingleFamily,3476446.64286
+East Harlem,Duplex,2827567.036
+East Harlem,Townhouse,3455099.48571
+East Harlem,Quadruplex,2869204.05714
+East Harlem,Triplex,5804391.6
+East Village,MultiFamily2To4,1678786.80944
+East Village,Apartment - 1 bedrooms,1187683.06346
+East Village,Cooperative,7722244.15476
+East Village,Unknown,1206579.97377
+East Village,Condominium,1735489.49967
+East Village,SingleFamily,7843643.89524
+East Village,Duplex,7673036.25714
+East Village,Townhouse,5126598.62857
+East Village,Quadruplex,7387702.17143
+East Village,Triplex,8788901.04286
+East Village,Miscellaneous,2113280.65714
+Financial District,MultiFamily2To4,2315899.52568
+Financial District,Apartment - 1 bedrooms,1655343.98852
+Financial District,Cooperative,1626331.6124
+Financial District,Condominium,2958665.97381
+Financial District,SingleFamily,12882353.1437
+Financial District,Duplex,18300110.1143
+Financial District,Townhouse,8820577.9
+Financial District,Triplex,12017932.6162
+Financial District,Miscellaneous,5908192.18
+Garment District,MultiFamily2To4,2360767.75958
+Garment District,Cooperative,10660732.2857
+Garment District,Condominium,7635331.05714
+Garment District,SingleFamily,9491982.32337
+Gramercy,MultiFamily2To4,8071136.68571
+Gramercy,Apartment - 1 bedrooms,764121.509954
+Gramercy,Cooperative,9899790.0
+Gramercy,Unknown,13122457.8071
+Gramercy,Condominium,5879957.88571
+Gramercy,SingleFamily,7427636.30714
+Gramercy,Duplex,8017220.27143
+Gramercy,Townhouse,9905853.31429
+Gramercy,Quadruplex,7211648.98571
+Gramercy,Triplex,7812261.3
+Gramercy,Miscellaneous,13750671.8
+Gramercy,Mobile,7400645.92857
+Greenwich Village,MultiFamily2To4,2248213.61041
+Greenwich Village,Apartment - 1 bedrooms,1501641.24481
+Greenwich Village,Cooperative,8389354.29952
+Greenwich Village,Unknown,1423461.95077
+Greenwich Village,Condominium,9536122.15714
+Greenwich Village,SingleFamily,13634653.1398
+Greenwich Village,Duplex,11143560.8571
+Greenwich Village,Townhouse,12153614.0381
+Greenwich Village,Quadruplex,6657995.12857
+Greenwich Village,Triplex,11205013.8679
+Greenwich Village,Miscellaneous,22232304.4944
+Hamilton Heights,MultiFamily2To4,2821088.03952
+Hamilton Heights,Apartment - 1 bedrooms,913738.875957
+Hamilton Heights,Cooperative,7066092.08571
+Hamilton Heights,Unknown,5126970.27143
+Hamilton Heights,Condominium,909402.991917
+Hamilton Heights,SingleFamily,3445242.04286
+Hamilton Heights,Duplex,2849662.77143
+Hamilton Heights,Townhouse,3224675.48
+Hamilton Heights,Quadruplex,2763213.37143
+Hamilton Heights,Triplex,3120930.45714
+Hamilton Heights,Mobile,7586714.84286
+Harlem,MultiFamily2To4,2186996.11474
+Harlem,Apartment - 1 bedrooms,888205.692857
+Harlem,Cooperative,3907115.12857
+Harlem,Unknown,916995.665693
+Harlem,Condominium,3084279.11429
+Harlem,SingleFamily,3223308.78571
+Harlem,Duplex,2877911.47924
+Harlem,Townhouse,3332773.67143
+Harlem,Quadruplex,3059840.75714
+Harlem,Triplex,2862582.98002
+Harlem,Miscellaneous,2869027.91721
+Inwood,MultiFamily2To4,4095839.7026
+Inwood,Cooperative,5741271.64286
+Inwood,Condominium,7716714.31429
+Inwood,SingleFamily,4637692.85714
+Inwood,Duplex,5075281.62857
+Inwood,Townhouse,4602035.82857
+Inwood,Quadruplex,5183316.75714
+Inwood,Triplex,5737853.91429
+Little Italy,MultiFamily2To4,2775686.52594
+Little Italy,Apartment - 1 bedrooms,864210.533651
+Little Italy,Cooperative,12603349.3571
+Little Italy,Condominium,7951350.72857
+Little Italy,SingleFamily,8575000.91429
+Little Italy,Townhouse,4647958.54286
+Little Italy,Triplex,11163365.5086
+Lower East Side,MultiFamily2To4,1655591.34286
+Lower East Side,Apartment - 1 bedrooms,846819.682674
+Lower East Side,Cooperative,9774965.8
+Lower East Side,Condominium,2655370.35714
+Lower East Side,SingleFamily,7883307.32381
+Lower East Side,Duplex,8558593.25714
+Lower East Side,Townhouse,9674868.94762
+Lower East Side,Quadruplex,6763777.05714
+Lower East Side,MultiFamily5Plus,1880922.82272
+Lower East Side,Triplex,7787849.04286
+Lower East Side,Miscellaneous,6736583.87143
+Midtown,MultiFamily2To4,1940289.28095
+Midtown,Apartment - 1 bedrooms,1220273.15556
+Midtown,Cooperative,11112951.4143
+Midtown,Unknown,1255314.70134
+Midtown,Condominium,2702262.39524
+Midtown,SingleFamily,8369278.5
+Midtown,Duplex,8488074.34286
+Midtown,Townhouse,8775233.25714
+Midtown,Quadruplex,10185369.109
+Midtown,MultiFamily5Plus,1889839.69629
+Midtown,Triplex,8060214.52857
+Midtown,Miscellaneous,8815509.80902
+Morningside Heights,MultiFamily2To4,1906295.06879
+Morningside Heights,Cooperative,8604659.2
+Morningside Heights,Unknown,733273.115476
+Morningside Heights,Condominium,10756322.7429
+Morningside Heights,SingleFamily,3225550.44286
+Morningside Heights,Duplex,3027150.51429
+Morningside Heights,Townhouse,3486137.49451
+Morningside Heights,Quadruplex,2459669.8915
+Morningside Heights,Triplex,3014596.08571
+Murray Hill,MultiFamily2To4,3137593.25875
+Murray Hill,Apartment - 1 bedrooms,3271809.25714
+Murray Hill,Cooperative,8987682.23899
+Murray Hill,Unknown,1033726.76145
+Murray Hill,Condominium,1680225.95238
+Murray Hill,SingleFamily,7710516.03333
+Murray Hill,Duplex,8196143.66857
+Murray Hill,Townhouse,7332758.34286
+Murray Hill,Quadruplex,2948226.38571
+Murray Hill,Triplex,8423363.225
+Murray Hill,Miscellaneous,9168549.84286
+North Sutton Area,MultiFamily2To4,2223848.09871
+North Sutton Area,Cooperative,6647158.63929
+North Sutton Area,Condominium,2121768.01429
+North Sutton Area,SingleFamily,8995874.12857
+North Sutton Area,Duplex,11591910.5429
+North Sutton Area,Townhouse,12809847.0571
+North Sutton Area,Quadruplex,8400755.67143
+North Sutton Area,MultiFamily5Plus,1341552.46869
+North Sutton Area,Triplex,5680810.18571
+Soho,MultiFamily2To4,7887903.21429
+Soho,Apartment - 1 bedrooms,2645584.69543
+Soho,Cooperative,9933342.63286
+Soho,Condominium,7396890.45714
+Soho,SingleFamily,10210530.6592
+Soho,Duplex,10467151.1964
+Soho,Townhouse,8498526.43929
+Soho,Quadruplex,9506004.98571
+Soho,Triplex,9100474.42857
+Soho,Miscellaneous,13809867.8286
+Tribeca,MultiFamily2To4,3897641.95346
+Tribeca,Apartment - 1 bedrooms,15198230.5929
+Tribeca,Cooperative,12610378.6143
+Tribeca,Unknown,5931265.58571
+Tribeca,Condominium,7175753.64286
+Tribeca,SingleFamily,12209914.5441
+Tribeca,Duplex,14316109.1571
+Tribeca,Townhouse,15796571.8571
+Tribeca,Triplex,10298700.4984
+Upper East Side,MultiFamily2To4,5842038.55143
+Upper East Side,Apartment - 1 bedrooms,1580637.57143
+Upper East Side,Cooperative,8889732.57455
+Upper East Side,Unknown,2856969.79181
+Upper East Side,Condominium,6592619.78571
+Upper East Side,SingleFamily,13968582.005
+Upper East Side,Duplex,13148224.794
+Upper East Side,Townhouse,15191990.5642
+Upper East Side,Quadruplex,10783915.581
+Upper East Side,Triplex,11711700.5363
+Upper East Side,Miscellaneous,19361898.7571
+Upper West Side,MultiFamily2To4,2798438.55394
+Upper West Side,Apartment - 1 bedrooms,1709811.38929
+Upper West Side,Cooperative,8469036.11429
+Upper West Side,Unknown,1181543.5419
+Upper West Side,Condominium,2051016.71429
+Upper West Side,SingleFamily,10099312.4286
+Upper West Side,Duplex,7034246.72857
+Upper West Side,Townhouse,3863904.57143
+Upper West Side,Quadruplex,6865549.82857
+Upper West Side,MultiFamily5Plus,2097955.18726
+Upper West Side,Triplex,6849940.14286
+Upper West Side,Mobile,2123151.03595
+Washington Heights,MultiFamily2To4,2444801.44286
+Washington Heights,Cooperative,10026044.8
+Washington Heights,Condominium,937134.307143
+Washington Heights,SingleFamily,3038745.97143
+Washington Heights,Duplex,2589716.17615
+Washington Heights,Townhouse,3196687.30551
+Washington Heights,Quadruplex,2984296.34286
+Washington Heights,Triplex,2697005.22
+Washington Heights,Miscellaneous,1041721.45714
+West Village,MultiFamily2To4,2417984.5501
+West Village,Apartment - 1 bedrooms,1242043.0894
+West Village,Cooperative,7745719.2
+West Village,Unknown,1353796.75468
+West Village,Condominium,5269876.74286
+West Village,SingleFamily,10613247.6143
+West Village,Duplex,9985001.61429
+West Village,Townhouse,10615936.0571
+West Village,Quadruplex,9320159.22101
+West Village,Triplex,11039164.4714
+Yorkville,MultiFamily2To4,1577226.0154
+Yorkville,Cooperative,8725853.61429
+Yorkville,Condominium,2895787.02857
+Yorkville,SingleFamily,7480186.87143
+Yorkville,Duplex,3045364.53214
+Yorkville,Townhouse,6886668.02857
+Yorkville,Quadruplex,5983157.14286
+Yorkville,Triplex,2736626.1675
+Battery Park,Apartment - 2 bedrooms,1865462.86431
+Carnegie Hill,Apartment - 2 bedrooms,1434476.84286
+Chelsea,Apartment - 2 bedrooms,1524221.53166
+Chinatown,Apartment - 2 bedrooms,1748287.14045
+Clinton,Apartment - 2 bedrooms,1565073.71991
+East Village,Apartment - 2 bedrooms,1283949.56522
+Financial District,Apartment - 2 bedrooms,1389670.93201
+Gramercy,Apartment - 2 bedrooms,1638475.88103
+Greenwich Village,Apartment - 2 bedrooms,2123782.31613
+Hamilton Heights,Apartment - 2 bedrooms,905517.884602
+Harlem,Apartment - 2 bedrooms,1650601.26429
+Little Italy,Apartment - 2 bedrooms,1390024.83456
+Lower East Side,Apartment - 2 bedrooms,1431968.78806
+Midtown,Apartment - 2 bedrooms,1682735.30788
+Murray Hill,Apartment - 2 bedrooms,3570557.98571
+Soho,Apartment - 2 bedrooms,3806434.9
+Tribeca,Apartment - 2 bedrooms,15813339.7357
+Upper East Side,Apartment - 2 bedrooms,1310211.88571
+Upper West Side,Apartment - 2 bedrooms,1880184.08692
+West Village,Apartment - 2 bedrooms,1618249.75548
+Battery Park,Apartment - 3 bedrooms,1944768.68786
+Carnegie Hill,Apartment - 3 bedrooms,1467548.38571
+Chelsea,Apartment - 3 bedrooms,1581677.23166
+Chinatown,Apartment - 3 bedrooms,1883287.77568
+Clinton,Apartment - 3 bedrooms,1704652.71427
+East Village,Apartment - 3 bedrooms,1312350.41452
+Financial District,Apartment - 3 bedrooms,1588209.56623
+Gramercy,Apartment - 3 bedrooms,1793629.4299
+Greenwich Village,Apartment - 3 bedrooms,2275656.34058
+Hamilton Heights,Apartment - 3 bedrooms,944961.544919
+Harlem,Apartment - 3 bedrooms,1680432.47143
+Little Italy,Apartment - 3 bedrooms,1636076.1667
+Lower East Side,Apartment - 3 bedrooms,1543488.3161
+Midtown,Apartment - 3 bedrooms,1684252.16946
+Murray Hill,Apartment - 3 bedrooms,4044222.15714
+Soho,Apartment - 3 bedrooms,3773683.27143
+Tribeca,Apartment - 3 bedrooms,16091219.4214
+Upper East Side,Apartment - 3 bedrooms,1373939.04286
+Upper West Side,Apartment - 3 bedrooms,1988309.54181
+West Village,Apartment - 3 bedrooms,1795907.6822
