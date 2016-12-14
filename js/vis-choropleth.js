@@ -49,7 +49,7 @@ var svg = d3.select("#chloropleth").append("svg")
 
 var projection = d3.geo.mercator()
     .scale(150000)
-    .translate([193790, 117350]);
+    .translate([193780, 117350]);
 
 var path = d3.geo.path()
     .projection(projection);
