@@ -30,6 +30,7 @@ text_for_hometype["MultiFamily2To4"] = "Multi-Family (2-4)";
 text_for_hometype["MultiFamily5Plus"] = "Multi-Family (5+)";
 
 var home_types_list = Object.keys(text_for_hometype);
+console.log(home_types_list)
 var neighborhood_selected = false; 
 
 var last_selected = "info-2"

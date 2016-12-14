@@ -32,7 +32,7 @@
             <a href="/predictions_on_subsets.html"class="left region">Results</a> 
         </nav>
         <div id="container"> 
-            <div> 
+            <div class="section"> 
                 <h1> Motivation </h1>
                 <p>
                 Real estate in Manhattan is notorious for being pricey, with homes highly coveted by professional investors and recent college graduates alike. In fact, real estate prices have enjoyed steady appreciation since 2009. Recently, however, price growth has cooled due to a market price correction, making now a good time to re-evaluate one’s options in the housing market. This market is especially ideal for those who are looking to sell and upsize.
@@ -43,7 +43,7 @@
                 </p>
 
             </div> 
-            <div> 
+            <div class="section"> 
                 <h1> Data </h1> 
                 <p>
                 We filtered through data from NYC City Planning Data to get a list of residential homes. We then pulled information regarding these properties using Zillow's API, acquiring many predictors including property size, number of bedrooms and bathrooms, latitude and longitude, and year built. We then collected relevant data regarding crime rates from the NYPD, academic performance from the NYC Department of Education, and public transportation locations from the MTA. (see <a href="data_collection.html" target="_self">Data Collection</a>)
@@ -61,8 +61,8 @@
                 Our dataset had over 100 predictors, and so for our regression models we looked at the correlations between each predictor and our y-variable and eliminated all predictors with a correlation of less than 0.1.  We also found that many of the crime and school predictors were very highly correlated with each other, so we created a much smaller subset of these predictors to be used in our regression models.  For random forest, we kept all of our predictors. (see <a href="data_cleaning.html" target="_self">Data Cleaning</a>)
                 </p>
 
-            </div> 
-            <div> 
+            </di> 
+            <div class="section"> 
                 <h1> Model and Results </h1>
                 <p>
                 We tried a variety of models, including linear, lasso, and ridge <a href="regression.html" target="_self">regression</a>, <a href="knn.html" target="_self">KNN</a>, and <a href="rf.html" target="_self">random forests</a>.  For each model, we used cross validation to choose parameters and then tested the accuracy of our model on the left-out test set. We used R-squared as our measure of accruacy.
@@ -77,16 +77,16 @@
                 </p>
             </div>
 
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="img/housing_prices1.png" style="width:800px;">
-                </div>
-                <div class="col-md-6">
-                    <img src="img/housing_prices2.png" style="width:800px;">
-                </div>
+            <div class="section img-wrapper">
+                <h4>Predicted Value of Median Homes By Neighborhood</h4>
+                <img src="img/housing_prices1.png" class="scatter-img">
+            </div>
+            <div class="section img-wrapper">
+                <h4>Predicted Value of Median Homes By Home Type</h4>
+                <img src="img/housing_prices2.png" class="scatter-img">
             </div>
 
-            <div> 
+            <div class="section"> 
                 <h1> Discussion  </h1>
                 <p>
                 Our best model (random forest with 90 trees and a max depth of 40) ended up having an R-squared value of 0.533 on our left-out test set.  We believe, though, that this is more likely a function of the quality of our data than insufficient model optimization. The majority of the correlations between our predictors and the response variable were less than .2, indicating weak relationships. There was also a lot of missing data, causing us to drop many rows as well as impute many values, which decreased both the size of our data set and the accuracy of our model.  We believe that better data collection methods would provide more comprehensive training sets, which could improve our model. 
@@ -99,7 +99,6 @@
         </div>
 
         <div class="row">
-            <div class="col-md-1"> </div>
             <div class="col-md-2" id="chloropleth-helpers">
                     <form class="form-inline">
                         <div class="form-group">
@@ -125,7 +124,7 @@
                     <div id="chloropleth-legend"></div>
                 </div>
             </div>
-            <div class="col-md-3" id="chloropleth"></div>
+            <div class="col-md-4" id="chloropleth"></div>
             <div class="col-md-6" id="info title">
                 <div class="row">
                     <h2> Compare two neighborhoods  </h2>

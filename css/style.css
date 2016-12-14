@@ -7,9 +7,11 @@ body {
     font-family: 'Rubik', sans-serif;
 }
 
-.row {
-    padding-top: 10px;
-    padding-bottom: 10px;
+.section {
+    padding-top: 50px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 
@@ -27,7 +29,20 @@ h1 {
 }
 
 
+.scatter-img {
+    width: 60%;
+    float: center;
+    margin: auto;
+}
 
+.img-wrapper {
+    text-align: center;
+}
+
+
+#chloropleth-helpers {
+    padding-left: 50px;
+}
 /* TABLE */
 
 
