@@ -13,7 +13,45 @@
 <body>
 
 
+
     <div class="container-fluid">
+
+
+
+
+        <div id = "center">
+        Predicting NYC Housing Market Values 
+        </div>
+        </a>
+        <nav class="left">
+            <a href="/data_collection.html" class="left region">Data Collection</a> |
+            <a href="/data_cleaning.html" class="left region">Data Cleaning</a> |
+            <a href="/regression.html" class="left region">Regression</a> |
+            <a href="/knn.html"class="left region">KNN</a> |
+            <a href="/rf.html"class="left region">Random Forest</a> |
+            <a href="/predictions_on_subsets.html"class="left region">Results</a> 
+        </nav>
+        <div id="container"> 
+            <div> 
+                <h1> Motivation </h1>
+                Real estate in Manhattan is notorious for being pricey, with homes highly coveted by professional investors and recent college graduates alike. In fact, real estate prices have enjoyed steady appreciation since 2009. Recently, however, price growth has cooled due to a market price correction, making now a good time to re-evaluate one’s options in the housing market. This market is especially ideal for those who are looking to sell and upsize.
+                Our project seeks to aid individuals in their real estate decisions by predicting the prices of properties of interest. We compiled information regarding each property, such as the number of bedrooms and bathrooms, and neighborhood location. We also expected certain additional attributes such as proximity to public transportation, school district performance, and regional crime rates to be relevant. 
+            </div> 
+            <div> 
+                <h1> Data </h1> 
+                We filtered through data from NYC City Planning Data, to get a list of residential homes and using Zillow’s API, we pulled information regarding these properties. We then collected relevant data regarding crime rates from the NYPD, academic performance from the NYC Department of Education, and public transportation locations from the MTA. 
+
+                From this data set, we attempted models with all features as well as with reduced features. We also avoided issues of multicollinearity by dealing with highly correlted predictors. In the cleaning process, we dropped and imputed values for missing fields. 
+            </div> 
+            <div> 
+                <h1> Model and Results </h1>
+                Our random forests model proved to be most accurate. The most important features included home size, property size, location, number bathrooms and bedrooms, and school test scores. Interestingly, we found distance to subway stops, home turnover rate in the past year, and certain neighborhoods and home types to be insignificant. We believe that this may be because there is truly a negligible relationship. For example public transportation is so abundant in Manhattan that the differences in distances to subway stops are insignificant. People may also prefer driving in which case proximity to public transportation would  not be relevant to housing price. Some neighborhoods are exceptionally desirable (e.g., Tribeca), and some are less desirable (e.g., Washington Heights). For this reason, it makes sense that these neighborhoods in particular are used by the model while others are not. 
+            </div>
+            <div> 
+                <h1> Discussion  </h1>
+                The majority of the correlations between our predictors and the response variable are <.2, indicating weak relationships. Therefore, we believe our R2 of .51 is more likely a function of the quality of our data than insufficient model optimization. There was also a lot of missing data, causing us to drop data points that had missing values for number of bedrooms and bathrooms and impute values for tax value and home size, which decreased the size of our data set and accuracy of our model.We believe that better data collection methods would provide more comprehensive training sets, which could improve our model. We have created a tool for users to compare the prices of different homes based on desired traits. 
+            </div> 
+        </div>
         <div class="row">
             <div class="col-md-6">
                 <img src="img/housing_prices1.png" style="width:800px;">
@@ -53,11 +91,12 @@
             <div class="col-md-6" id="info title">
                 <div class="row">
                     <h2> Compare two neighborhoods  </h2>
-                    click regions on the map to see all price predictions.
                 </div>
-                <div class="col-md-6" id="table-titles"></div>
+                <div class="col-md-6" id="table-titles"> 
+                    <h2> click regions on the map to see all price predictions.</h2>
+                </div>
                 <div class="col-md-3" id="info-1"></div>
-                <div class="col-md-3" id="info-2"></div>
+                <div class="col-md-3 " id="info-2"></div>
             </div>
 
         </div>
