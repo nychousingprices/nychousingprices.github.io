@@ -60,6 +60,8 @@ ul {
     z-index: 1000000;
 }
 
+
+
 li {
     float: left;
 }
@@ -109,6 +111,15 @@ li a:hover {
 }
 
 
+#links-to-notebooks {
+    font-size: 20px;
+    background-color: #D2D3D8;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+}
+
+
 
 /* TABLE */
 
@@ -139,25 +150,6 @@ th, td {
 tr:nth-child(odd) {
   background: #ddddff;
   text-align: left
-}
-
-.table-row {
-  font-weight: bold ;
-}
-
-
-/* 1st block */
-
-#background-info {
-    padding-left: 40px;
-    padding-bottom: 40px;
-}
-
-#africa-pic {
-    width: 100%;
-    margin: auto;
-    padding-top: 5%;
-    padding-bottom: 5%;
 }
 
 
@@ -218,47 +210,3 @@ div.tooltip {
 
 
 
-/* 3rd block */
-
-.quote {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    font-size: 20px;
-    font-style: italic;
-}
-
-
-
-/* Tree Diagram */
-
-#vis2 {
-    padding-left: 20px;
-}
-
-.tree-text {
-    fill: #08306b;
-    opacity: 1;
-    font-family: 'Rubik', sans-serif;
-}
-
-
-.node {
-    cursor: pointer;
-}
-
-.node circle {
-    fill: #fff;
-    stroke: #6A82A6;
-    stroke-width: 5px;
-}
-
-.node text {
-    font-size: 11px;
-}
-
-.link {
-    fill: none;
-    stroke: #3f007d;
-    opacity: .2;
-    stroke-width: 10px;
-}
