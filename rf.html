@@ -11802,6 +11802,103 @@ $( document ).ready(code_toggle);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">%%</span><span class="k">html</span>
+
+&lt;a href=&quot;index.html&quot; target=&quot;_self&quot;&gt;Back to home page&lt;/a&gt;
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+<div class="output_html rendered_html output_subarea ">
+
+<a href="index.html" target="_self">Back to home page</a>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">%%</span><span class="k">html</span>
+
+- &lt;a href = &#39;#rf&#39;&gt; Random Forest model &lt;/a&gt;
+&lt;br&gt;
+- &lt;a href = &#39;#parameter&#39;&gt; Parameter optimization &lt;/a&gt;
+&lt;br&gt;
+- &lt;a href = &#39;#best&#39;&gt; Best model &lt;/a&gt;
+&lt;br&gt;
+- &lt;a href = &#39;#visualize&#39;&gt; Visualizing the performance of our model &lt;/a&gt;
+&lt;br&gt;
+- &lt;a href = &#39;#features&#39;&gt; Most significant features &lt;/a&gt;
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+<div class="output_html rendered_html output_subarea ">
+
+- <a href = '#rf'> Random Forest model </a>
+<br>
+- <a href = '#parameter'> Parameter optimization </a>
+<br>
+- <a href = '#best'> Best model </a>
+<br>
+- <a href = '#visualize'> Visualizing the performance of our model </a>
+<br>
+- <a href = '#features'> Most significant features </a>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
@@ -11871,6 +11968,7 @@ $( document ).ready(code_toggle);
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><a id='rf'></a></p>
 <h2 id="Random-Forest-Model">Random Forest Model<a class="anchor-link" href="#Random-Forest-Model">&#182;</a></h2>
 </div>
 </div>
@@ -11890,6 +11988,7 @@ $( document ).ready(code_toggle);
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><a id='parameter'></a></p>
 <h2 id="Parameter-Optimization">Parameter Optimization<a class="anchor-link" href="#Parameter-Optimization">&#182;</a></h2><p>We considered applying Principal Component Analysis to reduce the number of features in our model to prevent overfitting. However, after implementing Random Forest with and without PCA, we noticed higher scores for our models without PCA. This is not surprising, given that the Random Forest method tends to do well with high dimensionality.</p>
 <p>We also tried various parameters for number of trees in the forest and maximum depth of the tree. We decided on ranges that are reasonable for the number of features and datapoints our model works with, and assuming that trees and depth will add accuracy in a decaying fashion. For number of trees in the forest, we explored parameters of 10, 30, 50, 70, and 90 and for maximum depth, we explored parameters of 10, 20, 30, 40, 50.</p>
 
@@ -11995,6 +12094,7 @@ Trees: 90 Depth: 40 Score: 0.456089748088
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><a id='best'></a></p>
 <h2 id="Best-Model">Best Model<a class="anchor-link" href="#Best-Model">&#182;</a></h2>
 </div>
 </div>
@@ -12046,6 +12146,7 @@ Test accuracy: 0.533428082276
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><a id='visualize'></a></p>
 <h2 id="Visualizing-the-performance-of-our-model">Visualizing the performance of our model<a class="anchor-link" href="#Visualizing-the-performance-of-our-model">&#182;</a></h2>
 </div>
 </div>
@@ -12571,6 +12672,7 @@ SboEHo/ZAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><a id='features'></a></p>
 <h2 id="Most-Significant-Features">Most Significant Features<a class="anchor-link" href="#Most-Significant-Features">&#182;</a></h2>
 </div>
 </div>

@@ -11800,6 +11800,91 @@ $( document ).ready(code_toggle);
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">%%</span><span class="k">html</span>
+
+&lt;a href=&quot;index.html&quot; target=&quot;_self&quot;&gt;Back to home page&lt;/a&gt;
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+<div class="output_html rendered_html output_subarea ">
+
+<a href="index.html" target="_self">Back to home page</a>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">%%</span><span class="k">html</span>
+
+- &lt;a href = &#39;#full&#39;&gt; KNN on full dataset &lt;/a&gt;
+&lt;br&gt;
+- &lt;a href = &#39;#subset&#39;&gt; KNN on a subset of predictors with PCA &lt;/a&gt;
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+<div class="output_html rendered_html output_subarea ">
+
+- <a href = '#full'> KNN on full dataset </a>
+<br>
+- <a href = '#subset'> KNN on a subset of predictors with PCA </a>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12094,7 +12179,8 @@ $( document ).ready(code_toggle);
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Full-dataset---cross-validation-on-KNN-models-with-different-numbers-of-neighbors">Full dataset - cross validation on KNN models with different numbers of neighbors<a class="anchor-link" href="#Full-dataset---cross-validation-on-KNN-models-with-different-numbers-of-neighbors">&#182;</a></h4>
+<p><a id='full'></a></p>
+<h2 id="Full-dataset--">Full dataset -<a class="anchor-link" href="#Full-dataset--">&#182;</a></h2><h4 id="cross-validation-on-KNN-models-with-different-numbers-of-neighbors">cross validation on KNN models with different numbers of neighbors<a class="anchor-link" href="#cross-validation-on-KNN-models-with-different-numbers-of-neighbors">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -12265,7 +12351,7 @@ R-squared for k=29 neighbors: 0.252624007443
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We then wanted to see if KNN would work better on a smaller number of predictors.  We decided to run the model again using only the predictors that we had chosen as being highly correlated with our y-value during the data cleaning stage, and also using PCA to reduce the number of dimensions.</p>
+<p>We then wanted to see if KNN would work better on a smaller number of predictors.  We decided to run the model again using only the predictors that we had chosen as being highly correlated with our y-value during the data cleaning stage (see <a href="data_cleaning.html" target="_self">Data Cleaning</a>), and also using PCA to reduce the number of dimensions.</p>
 
 </div>
 </div>
@@ -12275,7 +12361,8 @@ R-squared for k=29 neighbors: 0.252624007443
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Subset-of-predictors-and-PCA---cross-validation-on-KNN-models-with-different-numbers-of-neighbors-and-different-numbers-of-PCA-components">Subset of predictors and PCA - cross validation on KNN models with different numbers of neighbors and different numbers of PCA components<a class="anchor-link" href="#Subset-of-predictors-and-PCA---cross-validation-on-KNN-models-with-different-numbers-of-neighbors-and-different-numbers-of-PCA-components">&#182;</a></h4>
+<p><a id='subset'></a></p>
+<h2 id="Subset-of-predictors-and-PCA--">Subset of predictors and PCA -<a class="anchor-link" href="#Subset-of-predictors-and-PCA--">&#182;</a></h2><h4 id="cross-validation-on-KNN-models-with-different-numbers-of-neighbors-and-different-numbers-of-PCA-components">cross validation on KNN models with different numbers of neighbors and different numbers of PCA components<a class="anchor-link" href="#cross-validation-on-KNN-models-with-different-numbers-of-neighbors-and-different-numbers-of-PCA-components">&#182;</a></h4>
 </div>
 </div>
 </div>
